@@ -1,7 +1,12 @@
-from django.urls import path
-from .views import *
+"""EmployeeTask URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
+"""
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('emp/', EmployeeAPI.as_view()),
-    path('emp/<int:pk>/', EmployeeAPIView.as_view()),
+    path('admin/', admin.site.urls),
+    path('', include('employee.urls')),
 ]
